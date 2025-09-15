@@ -804,7 +804,7 @@ a.passage-link:hover {
     text-decoration: none;
 }
 /* twine-user-stylesheet #12: "StoryStylesheet" */
-/* Import all game CSS files. Paths are relative to the final HTML file in /dist */
+/* Import all game CSS files. These paths are relative to the final HTML file in /dist. */
 @import url("css/global.css");
 @import url("css/splash.css");
 @import url("css/welcome.css");
@@ -816,27 +816,25 @@ a.passage-link:hover {
 @import url("css/secret.css");
 @import url("css/settings.css");
 @import url("css/endgame.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* twine-user-script #1: "StoryScript" */
-/* Import all game JavaScript modules using SugarCube's importScripts macro */
-<<importScripts
-    "scripts/save.js",
-    "scripts/sound.js",
-    "scripts/ui.js",
-    "scripts/chat.js",
-    "scripts/profile.js",
-    "scripts/gallery.js",
-    "scripts/main.js"
->>
+/* Load JavaScript files directly. Paths are relative to dist/index.html */
+<script src="scripts/save.js"></script>
+<script src="scripts/sound.js"></script>
+<script src="scripts/ui.js"></script>
+<script src="scripts/chat.js"></script>
+<script src="scripts/profile.js"></script>
+<script src="scripts/gallery.js"></script>
+<script src="scripts/main.js"></script>
 
-/* Custom widgets */
+/* Custom widget */
 <<widget "mainmenu">>
     <div class='welcome-content'>
-        <img src='assets/logo/logo_alt.png' alt='Between: FracturedPromises' class='logo-small'>
-        <div class='menu'>
-            <<link "Start Game" "Episode 1 - The Crack">><</link>>
-            <<link "Continue" "Splash Screen">><</link>>
-            <<link "Settings" "Splash Screen">><</link>>
-        </div>
-        <a href='javascript:void(0)' class='credits-link'>About / Credits</a>
+      <img src='assets/logo/logo_alt.png' alt='Between: FracturedPromises' class='logo-small'>
+      <div class='menu'>
+        <<link "Start Game" "Episode 1 - The Crack">>
+        <<link "Continue" "Splash Screen">>
+        <<link "Settings" "Splash Screen">>
+      </div>
+      <a href='javascript:void(0)' class='credits-link'>About / Credits</a>
     </div>
 <</widget>>
 /* twine-user-script #2: "chat.js" */
