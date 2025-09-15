@@ -30,12 +30,14 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Check for Start Passage
+      # Optional validation step: check for StoryData.start
+      - name: Validate StoryData
         run: |
-          if ! grep -q ":: Start" Between_FracturedPromises/story.twee; then
-            echo "❌ Error: No ':: Start' passage found in story.twee"
+          if ! grep -q '"start":' Between_FracturedPromises/story.twee; then
+            echo "❌ Error: No 'start' field found in StoryData"
             exit 1
           fi
+          echo "✅ Start passage defined in StoryData."
 
       - name: Build Game
         run: |
