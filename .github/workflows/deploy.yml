@@ -27,11 +27,11 @@ jobs:
           chmod +x tweego
           echo "$(pwd)" >> $GITHUB_PATH
 
-      - name: Download SugarCube 2.37.3
+      - name: Download SugarCube v2.37.3 (Twine-1.4 version)
         run: |
           mkdir -p storyformats
-          wget https://motoslave.net/sugarcube/2/sugarcube-2.37.3.zip
-          unzip -o sugarcube-2.37.3.zip -d storyformats/
+          wget https://github.com/tmedwards/sugarcube-2/releases/download/v2.37.3/sugarcube-2.37.3-for-twine-1.4.zip
+          unzip -o sugarcube-2.37.3-for-twine-1.4.zip -d storyformats/
 
       - name: Install Dependencies
         run: npm install
