@@ -27,11 +27,11 @@ jobs:
           chmod +x tweego
           echo "$(pwd)" >> $GITHUB_PATH
 
-      - name: Download SugarCube 2.36.1
+      - name: Download SugarCube 2.37.1
         run: |
           mkdir -p storyformats
-          wget https://github.com/tmedwards/sugarcube-2/releases/download/v2.36.1/sugarcube-2.36.1-for-tweego.zip
-          unzip -o sugarcube-2.36.1-for-tweego.zip -d storyformats/
+          wget https://github.com/tmedwards/sugarcube-2/releases/download/v2.37.1/sugarcube-2.37.1-for-tweego.zip
+          unzip -o sugarcube-2.37.1-for-tweego.zip -d storyformats/
 
       - name: Install Dependencies
         run: npm install
@@ -39,7 +39,7 @@ jobs:
       - name: Build Game
         run: |
           mkdir -p dist
-          ./tweego -o dist/index.html -f sugarcube-2:2.36.1 -p storyformats Between_FracturedPromises/
+          ./tweego -o dist/index.html -f sugarcube-2:2.37.1 -p storyformats Between_FracturedPromises/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
